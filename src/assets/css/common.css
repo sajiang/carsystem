@@ -1,0 +1,15 @@
+:root{
+	--baseBlack:#333333;
+	--baseGreen:#abda58;
+	--grey9:#999999;
+	--grey6:#666666;
+}
+.red{
+	color: red;
+}
+.lightGrey{
+	color: var(--grey9);
+}
+.baseGreen{
+	color: var(--baseGreen)
+}
