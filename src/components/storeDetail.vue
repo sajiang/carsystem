@@ -182,7 +182,7 @@ export default {
 	line-height: 98px;
 	text-align: center;
 	color: white;
-	background: linear-gradient(to right,#abda58, #589f96);
+	background:var(--backlg);
 	font-size: 40px;
 }
 </style>

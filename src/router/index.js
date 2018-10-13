@@ -29,6 +29,12 @@ export default new Router({
 		//店铺详情
 		{ path: '/storeDetail/:id', component: resolve => require(['@/components/storeDetail'], resolve) },
 		//创建租车订单
-		{ path: '/createRentCarOrder/:carId', component: resolve => require(['@/components/createRentCarOrder'], resolve) }
+		{ path: '/createRentCarOrder/:carId', component: resolve => require(['@/components/createRentCarOrder'], resolve) },
+		//上传身份证
+		{ path: '/submitPersonalInfo/submitIdCard', component: resolve => require(['@/components/submitPersonalInfo/submitIdCard'], resolve) },
+		//上传驾驶证
+		{ path: '/submitPersonalInfo/submitDrivingLicense', component: resolve => require(['@/components/submitPersonalInfo/submitDrivingLicense'], resolve) },
+		//人脸识别
+		{ path: '/submitPersonalInfo/submitFaceRecognition', component: resolve => require(['@/components/submitPersonalInfo/submitFaceRecognition'], resolve) },
 	]
 })

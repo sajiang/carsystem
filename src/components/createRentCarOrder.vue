@@ -46,7 +46,7 @@
   		<div class="personInfo">
   			<div class="flexBox">
   				<div class="flex1">取车人信息</div>
-  				<div class="boldGreen">完善</div>
+  				<div class="boldGreen" @click="naviToSubmitPeronalInfo">完善</div>
   			</div>
   			<div class="mainContent">
   				<div class="flexBox">
@@ -106,6 +106,29 @@
 			<div class="tip"><span class="baseGreen">芝麻信用≥700</span>可以享受<span class="red">免押金</span>服务</div>
   		</div>
   	</div>
+    <div class="set4">
+      <div class="flexBox">
+        <div class="flex1">优惠券</div>
+        <div class="red">使用优惠券50元</div>
+      </div>
+    </div>
+    <div class="set5">
+      <div class="illustrate flexBox">
+        <div class="flex1">租车须知</div>
+        <img src="../assets/img/i-arrowRight.png">
+      </div>
+      <div class="illustrate flexBox">
+        <div class="flex1">押金说明</div>
+        <img src="../assets/img/i-arrowRight.png">
+      </div>
+    </div>
+    <div class="bottom flexBox">
+      <div class="flex1 flexBox">
+        <div class="tel"><img src="../assets/img/tel.png"></div>
+        <div class="price">¥268元</div>
+      </div>
+      <div class="submit">提交订单</div>
+    </div>
   </div>
 </template>
 
@@ -145,6 +168,9 @@ export default {
       	console.log(this.startTime)
       	this.rangeDay=parseInt((new Date(this.endTime).getTime()-new Date(this.startTime).getTime())/24/3600/1000)+1;
       }
+    },
+    naviToSubmitPeronalInfo(){
+      this.$router.push({ path: `/submitPersonalInfo/submitIdCard` })
     }
   }
 }
@@ -262,5 +288,53 @@ export default {
 			font-size: 24px;
 		}
 	}
+}
+.set4{
+  padding:30px 40px;
+  font-size:30px;
+  .borderBottom;
+}
+.set5{
+  padding:0px 40px;
+  .borderBottom;
+  margin-bottom:98px;
+  .illustrate{
+    padding:30px 0;
+    border-bottom:2px solid #e6e6e6;
+    img{
+      width:9px;
+      height:15px;
+    }
+  }
+}
+.bottom{
+  position: fixed;
+  bottom:0;
+  height:98px;
+  width:100%;
+  background:white;
+  .tel{
+    width:54px;
+    height:54px;
+    margin-left:40px;
+    margin-right:47px;
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+  .price{
+    font-size:40px;
+    font-weight:bold;
+    color:var(--baseGreen);
+  }
+  .submit{
+    width:320px;
+    height:98px;
+    line-height:98px;
+    text-align:center;
+    color:white;
+    background:var(--backlg);
+  }
 }
 </style>
