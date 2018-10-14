@@ -36,5 +36,9 @@ export default new Router({
 		{ path: '/submitPersonalInfo/submitDrivingLicense', component: resolve => require(['@/components/submitPersonalInfo/submitDrivingLicense'], resolve) },
 		//人脸识别
 		{ path: '/submitPersonalInfo/submitFaceRecognition', component: resolve => require(['@/components/submitPersonalInfo/submitFaceRecognition'], resolve) },
+		//绑定信用卡
+		{ path: '/submitPersonalInfo/bindCreditCard', component: resolve => require(['@/components/submitPersonalInfo/bindCreditCard'], resolve) },
+		
+
 	]
 })
