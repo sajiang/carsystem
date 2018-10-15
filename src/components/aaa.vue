@@ -5,9 +5,17 @@
 
 <script>
 export default {
-  name: 'emptyname'
+  name: 'emptyname',
+  data(){
+  	return{
+
+  	}
+  },
+  methods:{
+  	
+  }
 }
 </script>
-<style>
+<style scoped>
 @import "../assets/css/common.css";
 </style>

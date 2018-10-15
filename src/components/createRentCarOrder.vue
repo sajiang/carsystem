@@ -127,7 +127,7 @@
         <div class="tel"><img src="../assets/img/tel.png"></div>
         <div class="price">¥268元</div>
       </div>
-      <div class="submit">提交订单</div>
+      <div class="submit" @click="naviToBindPhone">提交订单</div>
     </div>
   </div>
 </template>
@@ -170,7 +170,10 @@ export default {
       }
     },
     naviToSubmitPeronalInfo(){
-      this.$router.push({ path: `/submitPersonalInfo/submitIdCard` })
+      this.$router.push({ path: `/submitPersonalInfo/submitIdCard` });
+    },
+    naviToBindPhone(){
+      this.$router.push({ path: `/submitPersonalInfo/bindPhone` });
     }
   }
 }

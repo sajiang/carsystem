@@ -2,13 +2,10 @@
   <div class="bindCreditCard">
   	<div class="mainContent">
   		<div class="tip">请绑定持卡人本人的信用卡</div>
-  		<div>
-  			<span>持卡人</span>
-  			<span>张*奇</span>
-  		</div>
   		<group>
-		    <selector  ref="defaultValueRef" title="银行" placeholder="选择银行" :options="list" v-model="bankType"></selector>
-    		<x-input title="卡号"  placeholder="输入卡号" type="number" v-model="cardNum"></x-input>
+        <x-input title="持卡人"   v-model="name"></x-input>
+        <x-input title="卡号"  type="number" v-model="cardNum"></x-input>
+		    <selector title="银行" placeholder="选择银行" :options="list" v-model="bankType"></selector>
     	</group>
   	</div>
   	<div class="nextStep" :class="cardNum&&bankType?'nextStepEnable':'nextStepdisable'" @click="naviToSelctPayType">
@@ -28,6 +25,7 @@ export default {
   },
   data(){
   	return {
+      name:"张*奇",
   		cardNum:"",
   		bankType:"",
   		list: [{key: 'zs', value: '招商银行'}, {key: 'zg', value: '中国银行'}],
@@ -40,7 +38,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 @import "../../assets/css/common.css";
 .mainContent{
 	padding: 110px 60px;
@@ -64,5 +62,8 @@ export default {
 }
 .nextStepdisable{
 	background:#CCCCCC;
+}
+/deep/ .weui-label{
+  width: 160px !important;
 }
 </style>

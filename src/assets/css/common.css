@@ -3,10 +3,11 @@
 	--baseGreen:#abda58;
 	--grey9:#999999;
 	--grey6:#666666;
+	--red:#d91a1a;
 	--backlg:linear-gradient(to right,#abda58, #589f96);;
 }
 .red{
-	color: #d91a1a;
+	color: var(---red);
 }
 .lightGrey{
 	color: var(--grey9);
