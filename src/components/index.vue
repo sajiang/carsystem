@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <div class="nav">
-      <router-link class="personalCenter" to="/personalCenter">
+      <router-link class="personalCenter" to="/personalCenter/index">
         <img class="icon" src="../assets/img/i-personalCenter.png">
       </router-link>
       <router-link class="navItem" to="/findCar">

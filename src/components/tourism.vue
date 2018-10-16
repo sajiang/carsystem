@@ -1,11 +1,12 @@
 <template>
-  <div class="personalCenter">
+  <div class="tourism">
+  	tourism
   </div>
 </template>
 
 <script>
 export default {
-  name: 'personalCenter'
+  name: 'tourism'
 }
 </script>
 <style>

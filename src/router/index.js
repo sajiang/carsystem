@@ -21,9 +21,9 @@ export default new Router({
 			  	name: 'storeList',
 			  	component: resolve => require(['@/components/storeList'], resolve),
 			},{
-				path: '/personalCenter',
-			  	name: 'personalCenter',
-			  	component: resolve => require(['@/components/personalCenter'], resolve),
+				path: '/tourism',
+			  	name: 'tourism',
+			  	component: resolve => require(['@/components/tourism'], resolve),
 			}]
 		},
 		//店铺详情
@@ -48,6 +48,16 @@ export default new Router({
 		{ path: '/submitPersonalInfo/bindPhone', component: resolve => require(['@/components/submitPersonalInfo/bindPhone'], resolve) },
 		//输入验证码
 		{ path: '/submitPersonalInfo/inputIdentifyCode', component: resolve => require(['@/components/submitPersonalInfo/inputIdentifyCode'], resolve) },
-		
+		//个人中心首页
+		{ path: '/personalCenter/index', component: resolve => require(['@/components/personalCenter/index'], resolve) },	
+		//订单列表
+		{ path: '/personalCenter/orderList', component: resolve => require(['@/components/personalCenter/orderList'], resolve) },	
+		//控车
+		{ path: '/controlCar/:carId', component: resolve => require(['@/components/controlCar'], resolve) },	
+		//还车1
+		{ path: '/returnCarStep1/:carId', component: resolve => require(['@/components/returnCarStep1'], resolve) },	
+		//还车2
+		{ path: '/returnCarStep2/:carId', component: resolve => require(['@/components/returnCarStep2'], resolve) },	
+
 	]
 })
