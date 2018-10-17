@@ -69,7 +69,7 @@ export default {
 <style scoped>
 @import "../assets/css/common.css";
 .returnCarStep2{
-  padding-bottom: 98px;
+  padding-bottom: 118px;
 }
 .flexBox{
   align-items: center;

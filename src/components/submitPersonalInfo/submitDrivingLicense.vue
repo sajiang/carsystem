@@ -60,6 +60,7 @@ export default {
 	text-align: center;
 }
 .submitDrivingLicense{
+  padding-bottom: 118px;
 	.flexBox{
 		align-items: center;
 		vertical-align: middle;

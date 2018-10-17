@@ -1,12 +1,12 @@
 <template>
   <div class="controlCar bold">
     <div class="line1">
-      <div class="center" @click="isCarOpen=!isCarOpen">
+      <div class="center" @click="isCarOpen=true">
         <img class="icon" v-if="isCarOpen" src="../assets/img/openCarDisable.png">
         <img class="icon" v-else src="../assets/img/openCarEnable.png">
         <div class="title">解锁</div>
       </div>
-      <div class="center">
+      <div class="center" @click="isCarOpen=false">
         <img class="icon" v-if="isCarOpen" src="../assets/img/closeCarEnable.png">
         <img class="icon" v-else src="../assets/img/closeCarDisable.png">
         <div class="title">已锁</div>

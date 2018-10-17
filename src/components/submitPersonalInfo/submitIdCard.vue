@@ -56,6 +56,7 @@ export default {
 <style lang="less">
 @import "../../assets/css/common.css";
 .submitIdCard{
+  padding-bottom: 118px;
 	.flexBox{
 		align-items: center;
 		vertical-align: middle;
