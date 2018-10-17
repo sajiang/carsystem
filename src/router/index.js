@@ -26,6 +26,8 @@ export default new Router({
 			  	component: resolve => require(['@/components/tourism'], resolve),
 			}]
 		},
+		//车辆已经在使用中扫码出现页面
+		{ path: '/scanCodeRentOrReturnCar/:carId', component: resolve => require(['@/components/scanCodeRentOrReturnCar'], resolve) },
 		//店铺详情
 		{ path: '/storeDetail/:id', component: resolve => require(['@/components/storeDetail'], resolve) },
 		//创建租车订单
@@ -52,6 +54,12 @@ export default new Router({
 		{ path: '/personalCenter/index', component: resolve => require(['@/components/personalCenter/index'], resolve) },	
 		//订单列表
 		{ path: '/personalCenter/orderList', component: resolve => require(['@/components/personalCenter/orderList'], resolve) },	
+		//优惠券管理
+		{ path: '/personalCenter/couponManage', component: resolve => require(['@/components/personalCenter/couponManage'], resolve) },	
+		//消息中心
+		{ path: '/personalCenter/messageCenter', component: resolve => require(['@/components/personalCenter/messageCenter'], resolve) },	
+		//押金管理
+		{ path: '/personalCenter/depositManage', component: resolve => require(['@/components/personalCenter/depositManage'], resolve) },	
 		//控车
 		{ path: '/controlCar/:carId', component: resolve => require(['@/components/controlCar'], resolve) },	
 		//还车1

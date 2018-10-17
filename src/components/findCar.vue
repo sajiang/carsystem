@@ -1,12 +1,12 @@
 <template>
   <div class="findCar">
     <div id="map-container"></div>
-    <div class="scanQRCode">
+    <div class="scanQRCode" @click="naviToScanCodeRRC">
       <div class="moji">
         扫码开锁
       </div>
     </div>
-    <div class="carInUse" v-show="isCarInUse">
+    <div class="carInUse" v-show="isCarInUse" >
       <div>
         <span class="useCarNum">2</span>辆车正使用
       </div>
@@ -44,8 +44,7 @@ export default {
         zoomToAccuracy: true,     
         //  定位按钮的排放位置,  RB表示右下
         buttonPosition: 'RB'
-      })
-
+      });
       geolocation.getCurrentPosition();
       AMap.event.addListener(geolocation, 'complete', (data)=>{
         this.map.setCenter(data.position);
@@ -84,8 +83,7 @@ export default {
       this.drawStore();
     },
     drawStore(){
-      for (var i = this.storeInfo.length - 1; i >= 0; i--) {
-        
+      for (var i = this.storeInfo.length - 1; i >= 0; i--) {    
         var markerContent = `<div style="position: relative;width: 32px;height: 38px">
              <img style="width:100%;height:100%" src="../static/img/i-storePos.svg">
              <span style="position: absolute;top: 5px;
@@ -99,6 +97,10 @@ export default {
         });
         this.map.add(marker);
       }
+    },
+    naviToScanCodeRRC(){
+      let carId='12';
+      this.$router.push({ path: `/scanCodeRentOrReturnCar/${carId}` })
     }
   }
 }

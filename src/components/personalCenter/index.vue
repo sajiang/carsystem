@@ -21,7 +21,7 @@
           <div class="desc">2车正在行驶</div>
         </div>
       </div>
-      <div class="section">
+      <div class="section" @click="naviToCouponManage">
         <div class="iconWrap">
           <img src="../../assets/img/i-discountManage.png">
         </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="sections mgt40">
-      <div class="section">
+      <div class="section" @click="naviToMessageCenter">
         <div class="iconWrap">
           <img src="../../assets/img/i-messageCenter.png">
         </div>
@@ -41,7 +41,7 @@
           <div class="desc">有<span class="red">5</span>条未读消息</div>
         </div>
       </div>
-      <div class="section">
+      <div class="section" @click="naviToDepositManage">
         <div class="iconWrap">
           <img src="../../assets/img/i-deposit.png">
         </div>
@@ -66,6 +66,15 @@ export default {
   methods:{
   	naviToOrderList(){
       this.$router.push({ path: `/personalCenter/orderList` });
+    },
+    naviToCouponManage(){
+      this.$router.push({ path: `/personalCenter/couponManage` });
+    },
+    naviToMessageCenter(){
+      this.$router.push({ path: `/personalCenter/messageCenter` });
+    },
+    naviToDepositManage(){
+      this.$router.push({ path: `/personalCenter/depositManage` });
     }
   }
 }

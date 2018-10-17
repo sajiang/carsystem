@@ -1,8 +1,35 @@
 <template>
-  <div class="returnCarStep1">
-    <div class="takePhoto">
-      <img src="../assets/img/returnPhoto1.png">
-      <s-upload-img class="input" @fileUpload="saveReturnPhoto1"></s-upload-img>
+  <div class="returnCarStep1 ">
+    <div class="flexBox">
+      <div class="takePhoto">
+        <img v-if="!returnPhotoSrc1.imgDataUrl" class="tipImg" src="../assets/img/returnPhoto1.png">
+        <img v-else  class="tipImg" :src="returnPhotoSrc1.imgDataUrl">
+        <s-upload-img class="input" @fileUpload="saveReturnPhoto1"></s-upload-img>
+      </div>
+    </div>
+    <div class="flexBox">
+      <div class="takePhoto">
+        <img v-if="!returnPhotoSrc2.imgDataUrl" class="tipImg" src="../assets/img/returnPhoto2.png">
+        <img v-else  class="tipImg" :src="returnPhotoSrc2.imgDataUrl">
+        <s-upload-img class="input" @fileUpload="saveReturnPhoto2"></s-upload-img>
+      </div>
+    </div>
+    <div class="flexBox">
+      <div class="takePhoto">
+        <img v-if="!returnPhotoSrc3.imgDataUrl" class="tipImg" src="../assets/img/returnPhoto3.png">
+        <img v-else  class="tipImg" :src="returnPhotoSrc3.imgDataUrl">
+        <s-upload-img class="input" @fileUpload="saveReturnPhoto3"></s-upload-img>
+      </div>
+    </div>
+    <div class="flexBox">
+      <div class="takePhoto">
+        <img v-if="!returnPhotoSrc4.imgDataUrl" class="tipImg" src="../assets/img/returnPhoto4.png">
+        <img v-else  class="tipImg" :src="returnPhotoSrc4.imgDataUrl">
+        <s-upload-img class="input" @fileUpload="saveReturnPhoto4"></s-upload-img>
+      </div>
+    </div>
+    <div class="nextStep" :class='returnPhotoSrc1.imgDataUrl&&returnPhotoSrc2.imgDataUrl&&returnPhotoSrc3.imgDataUrl&&returnPhotoSrc4.imgDataUrl?"nextStepEnable":"nextStepdisable"' @click="naviToNextStep">
+      下一步
     </div>
   </div>
 </template>
@@ -16,22 +43,88 @@ export default {
   },
   data(){
   	return{
-      returnPhotoSrc1:"",
-      returnPhotoSrc2:"",
-      returnPhotoSrc3:"",
-      returnPhotoSrc4:"",
+      returnPhotoSrc1:{
+        file:"",
+        imgDataUrl:""
+      },
+      returnPhotoSrc2:{
+        file:"",
+        imgDataUrl:""
+      },
+      returnPhotoSrc3:{
+        file:"",
+        imgDataUrl:""
+      },
+      returnPhotoSrc4:{
+        file:"",
+        imgDataUrl:""
+      },
   	}
   },
   methods:{
   	saveReturnPhoto1(e){
-      this.idCardBack=e.imgObjs; 
+      this.returnPhotoSrc1=e.imgObjs; 
     },
+    saveReturnPhoto2(e){
+      this.returnPhotoSrc2=e.imgObjs; 
+    },
+    saveReturnPhoto3(e){
+      this.returnPhotoSrc3=e.imgObjs; 
+    },
+    saveReturnPhoto4(e){
+      this.returnPhotoSrc4=e.imgObjs; 
+    },
+    naviToNextStep(){
+      this.$router.push({ path: `/returnCarStep2/${this.$route.params.carId}` })
+    }
   }
 }
 </script>
 <style scoped>
 @import "../assets/css/common.css";
+.returnCarStep1{
+  padding-bottom: 98px;
+}
+.flexBox{
+  align-items: center;
+  vertical-align: middle;
+  justify-content:center;
+}
 .takePhoto{
-  margin: 27px 95px;
+  margin-top: 54px;
+  position: relative;
+  width: 560px;
+  height: 246px;
+  border-radius: 20px;
+}
+.tipImg{
+  width: 560px;
+  height: 246px;
+  border-radius: 20px;
+}
+.input{
+  position: absolute;
+  width: 560px;
+  height: 246px;
+  display: inline-block;
+  left: 0;
+  top:0;
+  opacity: 0;
+}
+.nextStep{
+  position: fixed;
+  bottom:0;
+  height:98px;
+  line-height:98px;
+  width:100%;
+  text-align:center;
+  font-size:40px;
+  color:white;
+}
+.nextStepEnable{
+  background:var(--backlg);
+}
+.nextStepdisable{
+  background:#CCCCCC;
 }
 </style>
